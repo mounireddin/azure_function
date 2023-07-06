@@ -1,6 +1,9 @@
 resource "azurerm_resource_group" "resource_group" {
   name     = "mounir_stackg"
   location = "West Europe"
+  tags = {
+    OwnerEmail = "mounir@mobilabsolutions.com"
+  }
 }
 
 resource "azurerm_app_service_plan" "app_service_plan" {
