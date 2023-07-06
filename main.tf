@@ -23,7 +23,7 @@ resource "azurerm_storage_account" "storage_account" {
 }
 
 resource "azurerm_function_app" "function_app" {
-  name                       = "mounir_stackg_fun"
+  name                       = "mounirstackgfun"
   location                   = "West Europe"
   resource_group_name        = azurerm_resource_group.resource_group.name
   app_service_plan_id        = azurerm_app_service_plan.app_service_plan.id
