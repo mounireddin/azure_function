@@ -1,4 +1,5 @@
 variable "location" {
+  type        = string
   description = "(Required) The location of the Resource Group."
 }
 
