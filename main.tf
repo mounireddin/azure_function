@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "resource_group" {
-  name     = "mounir_stackg"
+  name     = "rg-${var.environment}-sg-${var.workload_name}-${var.location_abbreviation}"
   location = var.location
   tags = {
     OwnerEmail = "mounir@mobilabsolutions.com"
@@ -7,7 +7,7 @@ resource "azurerm_resource_group" "resource_group" {
 }
 
 resource "azurerm_app_service_plan" "app_service_plan" {
-  name                = "mounir_stackg_plan"
+  name                = "plan-${var.environment}-${var.workload_name}-${var.location_abbreviation}"
   location            = var.location
   resource_group_name = azurerm_resource_group.resource_group.name
   sku {
@@ -17,20 +17,19 @@ resource "azurerm_app_service_plan" "app_service_plan" {
 }
 
 resource "azurerm_storage_account" "storage_account" {
-  name                     = "mounirstackgst"
+  name                     = "st${var.environment}${var.workload_name}${var.location_abbreviation}"
   resource_group_name      = azurerm_resource_group.resource_group.name
   location                 = var.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+  account_tier             = var.account_tier             #"Standard"
+  account_replication_type = var.account_replication_type #"LRS"
   min_tls_version          = "TLS1_2"
 }
 
 resource "azurerm_function_app" "function_app" {
-  name                       = "mounirstackgfun"
+  name                       = "fun${var.environment}${var.workload_name}${var.location_abbreviation}"
   location                   = var.location
   resource_group_name        = azurerm_resource_group.resource_group.name
   app_service_plan_id        = azurerm_app_service_plan.app_service_plan.id
   storage_account_name       = azurerm_storage_account.storage_account.name
   storage_account_access_key = azurerm_storage_account.storage_account.primary_access_key
 }
-
