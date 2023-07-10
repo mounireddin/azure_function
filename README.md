@@ -26,14 +26,14 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_account_replication_type"></a> [account\_replication\_type](#input\_account\_replication\_type) | value | `string` | n/a | yes |
-| <a name="input_account_tier"></a> [account\_tier](#input\_account\_tier) | value | `string` | n/a | yes |
-| <a name="input_environment"></a> [environment](#input\_environment) | (Required) Specifies the Environment value (prod, qa, dev). | `string` | n/a | yes |
-| <a name="input_location"></a> [location](#input\_location) | (Required) The location of the Resource Group. | `string` | n/a | yes |
-| <a name="input_location_abbreviation"></a> [location\_abbreviation](#input\_location\_abbreviation) | (Required) The abbreviation of the location used in the Resource Group name. | `string` | n/a | yes |
-| <a name="input_sku_size"></a> [sku\_size](#input\_sku\_size) | value | `string` | n/a | yes |
-| <a name="input_sku_tier"></a> [sku\_tier](#input\_sku\_tier) | value | `string` | n/a | yes |
-| <a name="input_workload_name"></a> [workload\_name](#input\_workload\_name) | value | `string` | n/a | yes |
+| <a name="input_account_replication_type"></a> [account\_replication\_type](#input\_account\_replication\_type) | The replication type to use for the Storage Account. | `string` | n/a | yes |
+| <a name="input_account_tier"></a> [account\_tier](#input\_account\_tier) | The Account Tier to use for the Storage Account. | `string` | n/a | yes |
+| <a name="input_environment"></a> [environment](#input\_environment) | Specifies the Environment value (prod, qa, dev). | `string` | n/a | yes |
+| <a name="input_location"></a> [location](#input\_location) | The location of the Resource Group. | `string` | n/a | yes |
+| <a name="input_location_abbreviation"></a> [location\_abbreviation](#input\_location\_abbreviation) | The abbreviation of the location used in the Resource Group name. | `string` | n/a | yes |
+| <a name="input_sku_size"></a> [sku\_size](#input\_sku\_size) | The SKU size of the App Service Plan | `string` | n/a | yes |
+| <a name="input_sku_tier"></a> [sku\_tier](#input\_sku\_tier) | The SKU tier of the App Service Plan | `string` | n/a | yes |
+| <a name="input_workload_name"></a> [workload\_name](#input\_workload\_name) | Specifies the workload name | `string` | n/a | yes |
 
 ## Outputs
 
